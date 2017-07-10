@@ -18,7 +18,7 @@ import Data.Ord
 
 custom = RedditOptions True Nothing Anonymous (Just "recline v0.1.0.0")
 
-usersToCheck = ["endzeit_", "LMFAOwHOcAREASHAHXd"]
+usersToCheck = ["GallowBoob", "spez"]
 
 main = runRedditWith custom $ do
   infos <- mapM (getUserInfo . Username) usersToCheck
