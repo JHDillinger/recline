@@ -25,7 +25,7 @@ module Main where
 --             infos <- mapM (getUserInfo . Username) users
 --             return $ maximumBy (comparing linkKarma) infos
 
-import           Reddit
+import     Reddit
 import           Reddit.Types.Post
 
 import           Control.Monad
