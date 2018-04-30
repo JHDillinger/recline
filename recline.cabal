@@ -1,36 +1,67 @@
-name:                recline
-version:             0.1.0.0
--- synopsis:
--- description:
-homepage:            https://github.com/githubuser/recline#readme
-license:             BSD3
-license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2017 Author name here
-category:            Web
-build-type:          Simple
-cabal-version:       >=1.10
-extra-source-files:  README.md
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a579ff2226d1493e72ec3de6a370ddae32d565500ddb971c5f88caf728a58ae5
 
-executable recline
-  hs-source-dirs:      src
-  main-is:             Main.hs
-  build-depends:       base >= 4.7 && < 5,
-                       reddit, 
-                       aeson >= 0.9 && < 0.12,
-                       api-builder >= 0.10 && < 0.13,    
-                       bytestring == 0.10.*,    
-                       data-default-class >= 0.0.1 && < 0.2,    
-                       free >= 4 && < 5,    
-                       http-client >= 0.4.30 && < 0.6,    
-                       http-client-tls >= 0.2 && < 0.4,    
-                       http-types >= 0.8 && < 0.10,    
-                       network == 2.6.*,    
-                       text == 1.*,    
-                       time >= 1.5 && < 1.7,    
-                       transformers >= 0.4 && < 0.6,    
-                       unordered-containers >= 0.2.5 && < 0.3,    
-                       vector >= 0.10 && < 0.12
-  other-extensions:    OverloadedStrings
-  default-language:    Haskell2010                      
+name:           recline
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/recline#readme>
+homepage:       https://github.com/githubuser/recline#readme
+bug-reports:    https://github.com/githubuser/recline/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/recline
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_recline
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , reddit
+    , text
+  default-language: Haskell2010
+
+executable recline-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_recline
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , recline
+    , reddit
+    , text
+  default-language: Haskell2010
+
+test-suite recline-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_recline
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , recline
+    , reddit
+    , text
+  default-language: Haskell2010

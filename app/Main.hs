@@ -1,3 +1,11 @@
+-- module Main where
+
+-- import Lib
+
+-- main :: IO ()
+-- main = someFunc
+
+
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main where
@@ -25,7 +33,7 @@ module Main where
 --             infos <- mapM (getUserInfo . Username) users
 --             return $ maximumBy (comparing linkKarma) infos
 
-import     Reddit
+import           Reddit
 import           Reddit.Types.Post
 
 import           Control.Monad
