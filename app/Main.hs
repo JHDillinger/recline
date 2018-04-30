@@ -42,15 +42,19 @@ import           Data.Monoid
 import qualified Data.Text              as Text
 import qualified Data.Text.IO           as Text
 
+custom :: RedditOptions
 custom = RedditOptions True Nothing Anonymous (Just "recline v0.1.0.0")
 
+
+main :: IO (Either (APIError RedditError) ())
 main = runRedditWith custom $ do
   Listing _ _ posts <- getPosts
-  forM_ posts $ \post -> do
+  forM_ posts $ \post ->
     liftIO $ Text.putStrLn $
        "\n[" <> tshow (score post) <> "] " <>
        title post <> " (" <> sshow (subreddit post) <> ")"
 
+tshow :: Integer -> Text.Text
 tshow = Text.pack . show
 
 sshow :: SubredditName -> Text.Text
